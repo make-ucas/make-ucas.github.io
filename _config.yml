@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
-first_name: You
-middle_name: R.
-last_name: Name
+title: Ke Ma # the website title (if blank, full name will be used instead)
+first_name: Ma
+middle_name: " "
+last_name: Ke
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -146,7 +146,7 @@ newsletter:
 
 collections:
   books:
-    output: true
+    output: false
   news:
     defaults:
       layout: post
@@ -624,15 +624,15 @@ jekyll_get_json:
     json: assets/json/resume.json # it can also be an url
 
 jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+  - Work
+  - Education
+  - Publications
+  # - projects
+  # - volunteer
+  - Honors and Awards
+  # - certificates
+  # - skills
+  # - languages
+  - Academic Interests
+  # - references
+  - General Information

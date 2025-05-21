@@ -4,6 +4,7 @@ layout: default
 {% unless site.data.resume %}
   <div class="post">
     <header class="post-header">
+      {% unless page.hide_title %}
       <h1 class="post-title">
         {{ page.title }}
         {% if page.cv_pdf %}
@@ -21,6 +22,7 @@ layout: default
           </a>
         {% endif %}
       </h1>
+      {% endunless %}
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
@@ -55,6 +57,7 @@ layout: default
 {% else %}
   <div class="post">
     <header class="post-header">
+      {% unless page.hide_title %}
       <h1 class="post-title">
         {{ page.title }}
         {% if page.cv_pdf %}
@@ -72,6 +75,7 @@ layout: default
           </a>
         {% endif %}
       </h1>
+      {% endunless %}
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
@@ -88,29 +92,31 @@ layout: default
           {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
           <a class="anchor" id="{{ data[0] }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
+            <h3 class="card-title font-weight-medium">{{ data[0] }}</h3>
             <div>
               {% case data[0] %}
                 {% when 'basics' %}
                   {% include resume/basics.liquid %}
-                {% when 'education' %}
-                  {% include resume/education.liquid %}
-                {% when 'work' %}
-                  {% include resume/work.liquid %}
+                {% when 'General Information' %}
+                  {% include resume/basics.liquid %}
+                {% when 'Education' %}
+                  {% include resume/Education.liquid %}
+                {% when 'Work' %}
+                  {% include resume/Work.liquid %}
                 {% when 'volunteer' %}
                   {% include resume/volunteer.liquid %}
                 {% when 'projects' %}
                   {% include resume/projects.liquid %}
-                {% when 'awards' %}
-                  {% include resume/awards.liquid %}
+                {% when 'Honors and Awards' %}
+                  {% include resume/Awards.liquid %}
                 {% when 'skills' %}
                   {% include resume/skills.liquid %}
-                {% when 'publications' %}
-                  {% include resume/publications.liquid %}
+                {% when 'Publications' %}
+                  {% include resume/Publications.liquid %}
                 {% when 'languages' %}
                   {% include resume/languages.liquid %}
-                {% when 'interests' %}
-                  {% include resume/interests.liquid %}
+                {% when 'Academic Interests' %}
+                  {% include resume/Interests.liquid %}
                 {% when 'certificates' %}
                   {% include resume/certificates.liquid %}
                 {% when 'references' %}
