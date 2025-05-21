@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="cv">
+  <div class="card mt-3 p-3">
+    <h3 class="card-title font-weight-medium">{{ page.title }}</h3>
+    <div class="pt-2">
+      <ul class="list-unstyled">
+        {% for item in site.data.awards %}
+          <li class="py-2">
+            <div class="d-flex">
+              <div class="font-weight-bold text-nowrap mr-3" style="min-width: 90px;">
+                {{ item.date }}
+              </div>
+              <div>
+                <div class="text-muted small">
+                  <span class="text-dark">{{ item.title }}</span>
+                  {% if item.link %}
+                    <a href="{{ item.link }}" target="_blank" class="ml-1 text-info">{{ item.description }}</a>
+                  {% else %}
+                    <span class="ml-1">{{ item.description }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<!-- page.html -->
+        <div class="post">
+
+          <header class="post-header">
+            <h1 class="post-title font-weight-medium">{{ page.title }}</h1>
+          </header>
+
+          <article>
+            <div class="cv">
+              <div class="card mt-3 p-3">
+                <h3 class="card-title font-weight-medium">Journal</h3>
+                <div class="pt-2">
+                  <ul class="list-unstyled">
+                    {% for item in site.data.services.journal %}
+                      <li class="py-2">
+                        <div class="d-flex align-items-start">
+                          <div style="width: 100px; text-align: left;">
+                            <span class="badge blue">{{ item.badge }}</span>
+                          </div>
+                          <div>
+                            <span>{{ item.description }}</span>
+                          </div>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card mt-3 p-3">
+                <h3 class="card-title font-weight-medium">Conference</h3>
+                <div class="pt-2">
+                  <ul class="list-unstyled">
+                    {% for item in site.data.services.conference %}
+                      <li class="py-2">
+                        <div class="d-flex">
+                          <div class="font-weight-bold text-nowrap mr-3" style="width: 100px; text-align: left;">
+                            <span class="badge purple">{{ item.badge }}</span>
+                          </div>
+                          <div>
+                            {{ item.role }}{% if item.years %} ({{ item.years | join: ", " }}){% endif %}
+                          </div>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>

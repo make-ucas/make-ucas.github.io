@@ -1,0 +1,15 @@
+
+
+journal:
+  - badge: TPAMI
+    description: "IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI): Reviewer"
+  - badge: TIP
+    description: "IEEE Transactions on Image Processing (T-IP): Reviewer"
+
+conference:
+  - badge: ICML
+    role: Area Chair
+    years: [2025]
+  - badge: NeurIPS
+    role: PC Member
+    years: [2022, 2023, 2024]
