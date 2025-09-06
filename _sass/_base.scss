@@ -284,7 +284,8 @@ ul.task-list input[type="checkbox"] {
   }
 
   .navbar-brand {
-    color: var(--global-text-color);
+    color: var(--global-text-color) !important;   // force darker brand color
+    font-weight: 700;
   }
 
   .navbar-nav .nav-item .nav-link {
@@ -553,8 +554,9 @@ footer.sticky-bottom {
   padding-bottom: 3rem;
 
   h1 {
-    color: var(--global-theme-color);
+    color: var(--global-text-color) !important;   // use darker body text color
     font-size: 5rem;
+    font-weight: 700;
   }
 }
 
@@ -698,8 +700,9 @@ footer.sticky-bottom {
   margin-top: 2rem;
 
   h1 {
-    color: var(--global-theme-color);
+    color: var(--global-text-color) !important;   // darker, like body text
     font-size: 2rem;
+    font-weight: 700;
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -714,11 +717,12 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: var(--global-theme-color);            // use theme color like the page title
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
-    text-align: right;
+    text-align: left;                            // move year to the left
+    font-weight: 700;
   }
 
   ol.bibliography {
@@ -757,7 +761,7 @@ footer.sticky-bottom {
       }
 
       .title {
-        font-weight: bolder;
+        font-weight: 400; /* keep the same weight as authors/periodical for a consistent look */
       }
 
       .author {
@@ -785,6 +789,13 @@ footer.sticky-bottom {
             border-bottom: 1px dashed var(--global-text-color);
           }
         }
+        color: var(--global-text-color);
+        font-weight: 400;
+      }
+
+      .periodical {
+        color: var(--global-text-color);
+        font-weight: 400;
       }
 
       .links {
@@ -1416,4 +1427,15 @@ figure.cover {
   a.cover-link:hover {
     color: #23212d !important;
   }
+}
+
+
+/* 导航左上角 “Ke Ma” 如需更粗或更细，在这里调 */
+.navbar.navbar-light .navbar-brand {
+  font-weight: 400 !important; /* 想要更细就改成 400，想要更粗就 700 */
+  color: var(--global-text-color) !important;
+}
+/* 正文整体稍微加粗 */
+body {
+  font-weight: 400;
 }

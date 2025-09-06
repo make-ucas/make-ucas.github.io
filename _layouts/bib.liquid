@@ -4,26 +4,42 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
-        {%- if site.data.venues[entry.abbr] -%}
-          {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
-          {%- endif -%}
-          <abbr
-            class="badge rounded w-100"
-            {% if venue_style %}
-              {{ venue_style }}
-            {% endif -%}
-          >
-            {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
-            {% else %}
-              <div>{{- entry.abbr -}}</div>
+        {% assign badge_width = '100px' %}
+        {% assign v = site.data.venues[entry.abbr] %}
+        {% assign venue_style = null %}
+        {% if v and v.color != blank %}
+          {% assign venue_style = 'style="background-color:' | append: v.color | append: '; color:#fff; display:block; width:' | append: badge_width | append: '; text-align:center; margin:0 auto;"' %}
+        {%- endif -%}
+        <abbr
+          class="badge rounded"
+          {% if venue_style %}
+            {{ venue_style }}
+          {% endif -%}
+        >
+          {% if site.data.venues[entry.abbr].url %}
+            <a href="{{ site.data.venues[entry.abbr].url }}" style="color:#fff;">{{ entry.abbr }}</a>
+          {% else %}
+            <div style="color:#fff;">{{- entry.abbr -}}</div>
+          {% endif %}
+        </abbr>
+        {% if v and (v.type or v.IF) %}
+          <div class="badges" style="margin-top:0.35rem;">
+            {% if v.type and v.type contains 'CCF' %}
+              <span class="badge rounded"
+                style="background-color:{{ v.color }}; color:#fff; display:block; width:{{ badge_width }}; text-align:center; margin:0 auto 0.35rem auto;">
+                {{ v.type }}
+              </span>
             {% endif %}
-          </abbr>
-        {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+            {% if v.IF %}
+              <span class="badge rounded"
+                style="background-color:{{ v.color }}; color:#fff; display:block; width:{{ badge_width }}; text-align:center; margin:0 auto;">
+                IF: {{ v.IF }}
+              </span>
+            {% endif %}
+          </div>
         {% endif %}
+      {% else %}
+        <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
       {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
@@ -49,16 +65,14 @@
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
+    {% assign venue_color = nil %}
+    {% if entry.abbr and site.data.venues[entry.abbr] and site.data.venues[entry.abbr].color %}
+      {% assign venue_color = site.data.venues[entry.abbr].color %}
+    {% endif %}
     <!-- Author -->
     <div class="author">
-      {% assign author_array_size = entry.author_array | size %}
-
-      {% assign author_array_limit = author_array_size %}
-      {% if site.max_author_limit and author_array_size > site.max_author_limit %}
-        {% assign author_array_limit = site.max_author_limit %}
-      {% endif %}
-
-      {%- for author in entry.author_array limit: author_array_limit -%}
+      {%- assign total = entry.author_array | size -%}
+      {%- for author in entry.author_array -%}
         {% assign author_is_self = false %}
         {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
         {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
@@ -78,15 +92,15 @@
           {% endfor %}
         {%- endif -%}
 
-        {%- if forloop.length > 1 -%}
+        {%- if total > 1 -%}
           {% if forloop.first == false %},&nbsp;{% endif %}
-          {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;{% endif -%}
+          {%- if forloop.last %}and&nbsp;{% endif -%}
         {% endif %}
+
         {%- if author_is_self -%}
-          <em>
-            {{- author.first }}
-            {{ author_last_html -}}
-          </em>
+          <span class="self-author" style="color:{{ venue_color | default:'#0d6efd' }}; font-weight:600;">
+            {{- author.first }} {{ author_last_html -}}
+          </span>
         {%- else -%}
           {%- if coauthor_url -%}
             <a href="{{ coauthor_url }}">
@@ -98,42 +112,7 @@
             {{ author_last_html -}}
           {% endif %}
         {%- endif -%}
-      {% endfor %}
-      {%- assign more_authors = author_array_size | minus: author_array_limit -%}
-
-      {%- assign more_authors_hide = more_authors | append: ' more author' -%}
-      {% if more_authors > 0 %}
-        {%- if more_authors > 1 -%}
-          {% assign more_authors_hide = more_authors_hide | append: 's' %}
-        {%- endif -%}
-        {% assign more_authors_show = '' %}
-        {%- for author in entry.author_array offset: author_array_limit -%}
-          {% assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last %}
-          {% unless forloop.last %}
-            {% assign more_authors_show = more_authors_show | append: ', ' %}
-          {% endunless %}
-        {%- endfor -%}
-        {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
-        , and
-        <span
-          class="more-authors"
-          title="click to view {{ more_authors_hide }}"
-          onclick="
-              var element = $(this);
-              element.attr('title', '');
-              var more_authors_text = element.text() == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
-              var cursorPosition = 0;
-              var textAdder = setInterval(function(){
-                element.html(more_authors_text.substring(0, cursorPosition + 1));
-                if (++cursorPosition == more_authors_text.length){
-                  clearInterval(textAdder);
-                }
-            }, '{{ site.more_authors_animation_delay }}');
-          "
-        >
-          {{- more_authors_hide -}}
-        </span>
-      {% endif %}
+      {%- endfor -%}
       {% if entry.annotation %}
         <i
           class="fa-solid fa-circle-info ml-1"

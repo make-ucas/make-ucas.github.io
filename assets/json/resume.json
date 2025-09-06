@@ -24,12 +24,7 @@
     "position": "Postdoctoral Researcher",
     "url": "https://www.ucas.ac.cn/",
     "startDate": "2019-09",
-    "endDate": "2022-08",
-    "summary": "Conducted postdoctoral research in the field of computer science under the Institute of Computing Technology, CAS.",
-    "highlights": [
-      "Focused on adversarial machine learning and robust optimization.",
-      "Collaborated with leading researchers in security and AI."
-    ]
+    "endDate": "2022-08"
     }
   ],
   "volunteer": [
@@ -46,17 +41,17 @@
   ],
   "Education": [
     {
-    "institution": "University of Chinese Academy of Sciences",
+    "institution": "Institute of Information Engineering (IIE), Chinese Academy of Sciences (CAS)",
     "location": "Beijing, China",
-    "area": "Information Engineering",
+    "area": "Computer Science",
     "studyType": "PhD",
     "startDate": "2013-09",
     "endDate": "2019-06"
     },
     {
-      "institution": "Beihang University (BUAA)",
+      "institution": "Beijing University of Aeronautics and Astronautics (BUAA)",
       "location": "Beijing, China",
-      "area": "Engineering",
+      "area": "Software Engineering",
       "studyType": "Master",
       "startDate": "2010-09",
       "endDate": "2013-01"
@@ -64,7 +59,7 @@
     {
       "institution": "Tianjin University",
       "location": "Tianjin, China",
-      "area": "Science",
+      "area": "Mathematics",
       "studyType": "Bachelor",
       "startDate": "2005-09",
       "endDate": "2009-06"
