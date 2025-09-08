@@ -1,0 +1,51 @@
+---
+layout: default
+toc: false
+---
+
+<div class="students">
+  <h1>Students</h1>
+
+  <!-- 在读生（协助指导/指导）：姓名、奖项 -->
+  <h2>在读生（协助指导/指导）</h2>
+  <table class="students-table">
+    <tbody>
+    {% for s in site.data.students.current %}
+      {% assign deg = s.degree | downcase %}
+      <tr>
+        <td class="col-badge">
+          {% if deg contains 'ph' %}
+            <span class="badge-chip badge-phd">Ph.D.</span>
+          {% else %}
+            <span class="badge-chip badge-master">Master</span>
+          {% endif %}
+        </td>
+        <td class="col-name">{{ s.name }}</td>
+        <td class="col-awards">{{ s.awards }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- 已毕业（协助指导）：姓名、去向、奖项 -->
+  <h2>已毕业（协助指导）</h2>
+  <table class="students-table">
+    <tbody>
+    {% for s in site.data.students.graduated %}
+      {% assign deg = s.degree | downcase %}
+      <tr>
+        <td class="col-badge">
+          {% if deg contains 'ph' %}
+            <span class="badge-chip badge-phd">Ph.D.</span>
+          {% else %}
+            <span class="badge-chip badge-master">Master</span>
+          {% endif %}
+        </td>
+        <td class="col-name">{{ s.name }}</td>
+        <td class="col-dest">{{ s.destination }}</td>
+        <td class="col-awards">{{ s.awards }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

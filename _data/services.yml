@@ -2,14 +2,42 @@
 
 journal:
   - badge: TPAMI
-    description: "IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI): Reviewer"
-  - badge: TIP
-    description: "IEEE Transactions on Image Processing (T-IP): Reviewer"
+    description: "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI): Reviewer"
+
+  - badge: TIT
+    description: "IEEE Transactions on Information Theory (TIT): Reviewer"
+
+  - badge: TKDE
+    description: "IEEE Transactions on Knowledge and Data Engineering (TKDE): Reviewer"
+
+  - badge: TAI
+    description: "IEEE Transactions on Artificial Intelligence (TAI): Reviewer"
+
+  - badge: TCSVT
+    description: "IEEE Transactions on Circuits and Systems for Video Technology (TCSVT): Reviewer"
+
+  - badge: TNNLS
+    description: "IEEE Transactions on Neural Networks and Learning Systems (TNNLS): Reviewer"
+
+  - badge: TMM
+    description: "IEEE Transactions on Multimedia (TMM): Reviewer"
 
 conference:
-  - badge: ICML
+  - badge: NeurIPS
     role: Area Chair
-    years: [2025]
+    years: [2026]
   - badge: NeurIPS
     role: PC Member
-    years: [2022, 2023, 2024]
+    years: 
+  - badge: ICML
+    role: PC Member
+    years: 
+  - badge: ICLR
+    role: PC Member
+    years: 
+  - badge: AAAI
+    role: PC Member
+    years: 
+  - badge: IJCAI
+    role: PC Member
+    years: 

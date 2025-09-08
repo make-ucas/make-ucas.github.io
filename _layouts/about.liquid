@@ -48,14 +48,26 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix" style="text-align: justify;">{{ content }}</div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
-      {% include news.liquid limit=true %}
+      <div class="news-list">
+        {% include news.liquid %}
+      </div>
+      <style>
+        .news-list .news-item {
+          display: flex;
+          align-items: flex-start;
+        }
+        .news-list .news-item .date {
+          min-width: 100px;
+          text-align: right;
+        }
+      </style>
     {% endif %}
 
     <!-- Selected papers -->

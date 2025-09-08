@@ -1,0 +1,52 @@
+graduated:
+  - degree: Ph.D.
+    name: 包世龙
+    destination: 中国科学院大学（博士后 / 特别研究助理）
+    awards: 北京图象图形学学会优博, 国家奖学金
+
+  - degree: Ph.D.
+    name: 王子泰
+    destination: 中国科学院计算技术研究所（博新计划博士后）
+    awards: 博新计划博士后, 国家奖学金
+
+  - degree: Ph.D.
+    name: 侯文政
+    destination: 小红书
+    awards: 国家奖学金
+
+current:
+  - degree: Ph.D.
+    name: 杨品慈
+    awards: ChinaMM 2025 Best Paper 🏆
+
+  - degree: Ph.D.
+    name: 裴高政
+    awards: 1*ICML, 1*CVPR, 1*AAAI; ACMMM 2025 Competition Champion 🏆, ICCV 2025 Competition Champion 🏆
+
+  - degree: Ph.D.
+    name: 张东鹏
+    awards: ACMMM 2025 Competition Champion 🏆
+
+  - degree: Master
+    name: 杨昊明
+    awards: 1*ICML; IJCAI 2025 Competition Champion 🏆
+
+  - degree: Master
+    name: 徐晓海
+    awards: IJCAI 2025 Competition Champion 🏆
+
+  - degree: Master
+    name: 张力公
+    awards: IJCAI 2025 Competition Champion 🏆
+
+  - degree: Master
+    name: 孙承志
+    awards: ACMMM 2025 Competition Champion 🏆
+
+  - degree: Master
+    name: 张芝瑞
+    awards: 
+
+  - degree: Master
+    name: 张淇
+    awards: 

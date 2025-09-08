@@ -3,6 +3,7 @@ layout: default
 ---
 <!-- page.html -->
         <div class="post">
+          <div class="services">
 
           <header class="post-header">
             <h1 class="post-title font-weight-medium">{{ page.title }}</h1>
@@ -18,7 +19,7 @@ layout: default
                       <li class="py-2">
                         <div class="d-flex align-items-start">
                           <div style="width: 100px; text-align: left;">
-                            <span class="badge blue">{{ item.badge }}</span>
+                            <span class="badge blue d-inline-block text-center" style="min-width: 70px;">{{ item.badge }}</span>
                           </div>
                           <div>
                             <span>{{ item.description }}</span>
@@ -38,7 +39,7 @@ layout: default
                       <li class="py-2">
                         <div class="d-flex">
                           <div class="font-weight-bold text-nowrap mr-3" style="width: 100px; text-align: left;">
-                            <span class="badge purple">{{ item.badge }}</span>
+                            <span class="badge purple d-inline-block text-center" style="min-width: 70px;">{{ item.badge }}</span>
                           </div>
                           <div>
                             {{ item.role }}{% if item.years %} ({{ item.years | join: ", " }}){% endif %}
@@ -52,4 +53,5 @@ layout: default
             </div>
           </article>
 
+          </div>
         </div>

@@ -2,6 +2,6 @@
 layout: research
 permalink: /research/
 title: Research
-nav: true
+nav: false
 nav_order: 3
 ---

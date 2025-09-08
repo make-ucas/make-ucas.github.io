@@ -2,7 +2,8 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Associate Professor (Tenure-track Assistant Professor) 
+          <a href='https://eece.ucas.edu.cn/index.php/zh-cn/'>School of Electronic, Electrical and Communication Engineering, UCAS</a>. 
 
 profile:
   align: right
@@ -24,8 +25,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi! I'm Ke Ma(马坷), an Associate Professor (Tenure-track Assistant Professor) with the School of Electronic, Electrical and Communication Engineering, University of Chinese Academy of Sciences. I got my Ph.D. degree from Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS) in 2019, supervised by Prof. [Xiaochun Cao](http://people.ucas.ac.cn/~xiaochun) (Professor at Sun Yat-sen University, Shenzhen Compus, China). I am also lucky to have opportunities to collaborate with [Qingming Huang](https://qmhuang-ucas.github.io/) (IEEE Fellow), [Qianqian Xu](https://qianqianxu010.github.io/) (Professor at ICT CAS), [Yuan Yao](https://yao-lab.github.io/) (Professor at HKUST), [Jiechao Xiong](https://scholar.google.com/citations?user=X8YIcKEAAAAJ&hl=zh-CN) (Research Fellow at Tencent Lab AI Lab), [Zhiyong Yang](https://joshuaas.github.io/) (postdoc at UCAS), [Yangbangyan Jiang](https://scholar.google.com/citations?user=h4Zm5d8AAAAJ&hl=zh-CN) (Ph.D. Student at IIE, CAS), [Xiaojun Jia](https://jiaxiaojunqaq.github.io/) (Research Fellow at NTU), and [Siyuan Liang](https://liangsiyuan21.github.io/) (Research Fellow at NUS).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I'm especially interested in several fundamental problems in machine learning:
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+- <a  style="font-weight: bold;">Adversarial Learning</a>
+- <a  style="font-weight: bold;">Robust Optimization</a>
+- <a  style="font-weight: bold;">Robust Game Theory</a>
+
+<span style="color: #b509ac">I'm always looking for highly self-motivated PhD/Master students!</span>

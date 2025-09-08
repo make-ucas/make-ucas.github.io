@@ -580,6 +580,7 @@ footer.sticky-bottom {
 }
 
 .post-title {
+  font-weight: 400; // make the main H1 title bold
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
@@ -1439,3 +1440,108 @@ figure.cover {
 body {
   font-weight: 400;
 }
+
+/* 页面宽度*/
+.container,
+.container-lg,
+.container-md,
+.container-xl {
+  max-width: 800px !important; /* adjust site content width */
+}
+
+/* Prevent long subtitle from running under the portrait */
+.about .desc {
+  display: block;
+  max-width: 60ch;      /* ~60 characters wide for comfortable reading */
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* ================= 学生页面的改动 =========================================================== */
+.students-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;          /* slightly smaller row gap */
+  table-layout: fixed;            /* keep columns tight and predictable */
+}
+.students-table td {
+  vertical-align: middle;
+  font-size: 0.96rem;             /* a tad smaller */
+  padding: 0.12rem 0.4rem;        /* tighter cell padding */
+  text-align: left;
+}
+/* tighter column widths so name/awards are closer */
+.students-table .col-badge { width: 70px; }
+.students-table .col-name  { width: 70px; font-weight: 500; }  /* lighter */
+.students-table .col-dest  { width: 200px; font-weight: 400; color: var(--global-text-color); }
+.students-table .col-awards { font-weight: 400;color: var(--global-text-color); }
+
+/* pill-style badges (Ke's preferred blue) */
+.badge-chip {
+  display: inline-block;
+  min-width: 62px;
+  padding: 0.18rem 0.55rem;
+  border-radius: 8px;            /* a bit less round */
+  font-weight: 700;
+  font-size: 0.9rem;             /* smaller text */
+  line-height: 1.05;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+.badge-phd   { background: #4B66AD; }
+.badge-master{ background: #2f7ae5; }
+
+/* section titles + page title on Students */
+.students h1 {
+  font-size: 2rem;               /* shrink big "Students" title on this page */
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.students h2 {
+  margin-top: 1.5rem;            /* less vertical spacing */
+  margin-bottom: 0.35rem;
+  font-weight: 500;              /* lighter than before */
+  font-size: 1.3rem;             /* smaller */
+}
+/* ================= 学生页面的改动 ======================================================================= */
+
+// ========================下面这一部分是为了让 论文标签 和 论文标题对齐的屎山代码，别乱动。=========================
+/* 让出版条目左右两列“顶端对齐”+ 轻微下压左列 */
+.publications ol.bibliography li .row {
+  align-items: flex-start !important;           /* 行内若有别的对齐方式，一刀切覆盖 */
+}
+.publications ol.bibliography li .row > [class*="col-"]:first-child {
+  padding-top: .28rem !important;               /* 往下压一丢丢，.25~.32rem 可微调 */
+}
+/* 避免标题自带上外边距把右列“顶起” */
+.publications ol.bibliography li .title {
+  margin-top: 0 !important;
+}
+/* 徽章本身不要额外的外边距/行高撑开 */
+.publications .abbr { margin-top: 0 !important; }
+.publications .abbr abbr {
+  display: inline-block;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+// ========================上面这一部分是为了让 论文标签 和 论文标题对齐的屎山代码，别乱动 ==========================
+
+/*============================================ Services 页面标题样式================================================================== */
+/* 卡片内的小标题（Journal / Conference） */
+.services .card .card-title,
+.layout-services .card .card-title,
+.page-services .card .card-title {
+  font-size: 1.4rem;   /* 改大小 */
+  font-weight: 400;    /* 改粗细（500/600/700） */
+  margin-bottom: .5rem;
+}
+
+/* 页面最顶端的大标题 “Services” */
+.services .post-title,
+.layout-services .post-title,
+.page-services .post-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+/*============================================ Services 页面标题样式================================================================== */

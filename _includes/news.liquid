@@ -9,15 +9,11 @@
     >
       <table class="table table-sm table-borderless">
         {% assign news = site.news | reverse %}
-        {% if include.limit and page.announcements.limit %}
-          {% assign news_limit = page.announcements.limit %}
-        {% else %}
-          {% assign news_limit = news_size %}
-        {% endif %}
+        {% assign news_limit = news_size %}
         {% for item in news limit: news_limit %}
           <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
-            <td style="font-weight:400">
+            <th scope="row" style="width:20%; white-space:nowrap; text-align:left; vertical-align:top; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum';">{{ item.date | date: '%b %d, %Y' }}</th>
+            <td style="font-weight:400; vertical-align:top;">
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
               {% else %}

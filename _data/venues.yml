@@ -11,7 +11,7 @@
 "TPAMI":
   color: "#4B66AD"
   type: Journal
-  IF: 23.6
+  IF: 18.6
 
 "TIP":
   color: "#4B66AD"
@@ -51,7 +51,9 @@
   color: "#b509ac"
   type: CCF-A
 
-
+"ChinaMM":
+  color: "#b509ac"
+  type: 
 
 "ACM MM":
   color: "#b509ac"
@@ -61,21 +63,31 @@
   color: "#b509ac"
   type: CCF-B
 
+"ACL": 
+  color: "#b509ac"
+  type: CCF-A 
+
 "TSP":
   color: "#4B66AD"
   type: Journal
-  IF: 4.3
+  IF: 5.8
 
 "TKDE":
   color: "#4B66AD"
   type: Journal
-  IF: 8.9
+  IF: 10.4
 
 "TMM":
   color: "#4B66AD"
   type: Journal
-  IF: 7.3
+  IF: 9.7
 
 "AISTATS":
   color: "#b509ac"
   type: CCF-B
+
+"Oral":
+  color: "#b509ac"
+
+"Best Paper":
+  color: "#b509ac"
