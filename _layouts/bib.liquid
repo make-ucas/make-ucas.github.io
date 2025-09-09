@@ -4,11 +4,13 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr d-flex flex-column justify-content-start" style="padding-top:0;">
       {%- if entry.abbr -%}
-        {% assign badge_width = '100px' %}
+        {% assign badge_width = '110px' %}
+        {% assign badge_gap = '0.4rem' %}
+        {% assign badge_common = 'display:block; width:' | append: badge_width | append: '; text-align:center; padding:6px 0; line-height:1.15; white-space:nowrap;' %}
         {% assign v = site.data.venues[entry.abbr] %}
         {% assign venue_style = null %}
         {% if v and v.color != blank %}
-          {% assign venue_style = 'style="background-color:' | append: v.color | append: '; color:#fff; display:block; width:' | append: badge_width | append: '; text-align:center; margin:0 auto; margin-top:0;"' %}
+          {% assign venue_style = 'style="background-color:' | append: v.color | append: '; color:#fff; ' | append: badge_common | append: '; margin:0 auto;"' %}
         {%- endif -%}
         <abbr
           class="badge rounded"
@@ -26,13 +28,13 @@
           <div class="badges" style="margin-top:0.35rem;">
             {% if v.type and v.type contains 'CCF' %}
               <span class="badge rounded"
-                style="background-color:{{ v.color }}; color:#fff; display:block; width:{{ badge_width }}; text-align:center; margin:0 auto 0.35rem auto;">
+                style="background-color:{{ v.color }}; color:#fff; {{ badge_common }}; margin:{{ badge_gap }} auto 0 auto;">
                 {{ v.type }}
               </span>
             {% endif %}
             {% if v.IF %}
               <span class="badge rounded"
-                style="background-color:{{ v.color }}; color:#fff; display:block; width:{{ badge_width }}; text-align:center; margin:0 auto;">
+                style="background-color:{{ v.color }}; color:#fff; {{ badge_common }}; margin:{{ badge_gap }} auto 0 auto;">
                 IF: {{ v.IF }}
               </span>
             {% endif %}
@@ -71,14 +73,16 @@
                 {% assign eb_color = v.color %}
               {% endif %}
               <span class="badge rounded"
-                style="background-color:{{ eb_color }}; color:#fff; display:block; width:{{ badge_width }}; text-align:center; margin:0 auto 0.35rem auto;">
+                style="background-color:{{ eb_color }}; color:#fff; {{ badge_common }}; margin:{{ badge_gap }} auto 0 auto;">
                 {{ eb_trim }}
               </span>
             {% endfor %}
           </div>
         {% endif %}
       {% else %}
-        <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+        <abbr class="badge rounded" style="{{ badge_common }}; margin:0 auto; background-color:#6c757d; color:#fff; width:{{ badge_width }};">
+          {{ entry.abbr }}
+        </abbr>
       {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
