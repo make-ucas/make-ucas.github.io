@@ -197,7 +197,24 @@
       {% include hook/bib.liquid %}
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
-    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+    {% if proceedings contains entry.type %}
+      {% capture periodical %}
+        {{ entrytype }}{% if entry.pages %}, {{ entry.pages }}{% endif %}{% if entrymonth or entryyear %}, {{ entrymonth }}{{ entryyear }}{% endif %}
+      {% endcapture %}
+    {% else %}
+      {% capture periodical %}
+        {{ entrytype }}
+        {% if entry.volume %}
+          {% if entry.number %}
+            , {{ entry.volume }}({{ entry.number }}):
+          {% else %}
+            , {{ entry.volume }}
+          {% endif %}
+        {% endif %}
+        {% if entry.pages %} {{ entry.pages }}{% endif %}
+        {% if entrymonth or entryyear %}, {{ entrymonth }}{{ entryyear }}{% endif %}
+      {% endcapture %}
+    {% endif %}
     <div class="periodical">
       {{ periodical | strip }}
     </div>
