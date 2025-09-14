@@ -10,8 +10,7 @@
 
 "TPAMI":
   color: "#4B66AD"
-  type: Journal
-  IF: 18.6
+  type: CCF-A
 
 "TIP":
   color: "#4B66AD"
@@ -69,18 +68,15 @@
 
 "TSP":
   color: "#4B66AD"
-  type: Journal
-  IF: 5.8
+  type: CCF-B
 
 "TKDE":
   color: "#4B66AD"
-  type: Journal
-  IF: 10.4
+  type: CCF-A 
 
 "TMM":
   color: "#4B66AD"
-  type: Journal
-  IF: 9.7
+  type: CCF-B
 
 "AISTATS":
   color: "#b509ac"

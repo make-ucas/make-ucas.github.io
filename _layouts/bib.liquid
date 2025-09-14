@@ -203,16 +203,7 @@
       {% endcapture %}
     {% else %}
       {% capture periodical %}
-        {{ entrytype }}
-        {% if entry.volume %}
-          {% if entry.number %}
-            , {{ entry.volume }}({{ entry.number }}):
-          {% else %}
-            , {{ entry.volume }}
-          {% endif %}
-        {% endif %}
-        {% if entry.pages %} {{ entry.pages }}{% endif %}
-        {% if entrymonth or entryyear %}, {{ entrymonth }}{{ entryyear }}{% endif %}
+        {{ entrytype }}{% if entry.volume %},{% if entry.number %} {{ entry.volume }}({{ entry.number }}):{% else %} {{ entry.volume }}{% endif %}{% endif %}{% if entry.pages %} {{ entry.pages }}{% endif %}{% if entrymonth or entryyear %}, {{ entrymonth }}{{ entryyear }}{% endif %}
       {% endcapture %}
     {% endif %}
     <div class="periodical">

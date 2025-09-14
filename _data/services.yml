@@ -4,11 +4,17 @@ journal:
   - badge: TPAMI
     description: "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI): Reviewer"
 
-  - badge: TIT
-    description: "IEEE Transactions on Information Theory (TIT): Reviewer"
+  - badge: TIP
+    description: "IEEE Transactions on Image Processing (TIP): Reviewer"
 
   - badge: TKDE
     description: "IEEE Transactions on Knowledge and Data Engineering (TKDE): Reviewer"
+
+  - badge: TNNLS
+    description: "IEEE Transactions on Neural Networks and Learning Systems (TNNLS): Reviewer"
+
+  - badge: TMM
+    description: "IEEE Transactions on Multimedia (TMM): Reviewer"
 
   - badge: TAI
     description: "IEEE Transactions on Artificial Intelligence (TAI): Reviewer"
@@ -16,11 +22,8 @@ journal:
   - badge: TCSVT
     description: "IEEE Transactions on Circuits and Systems for Video Technology (TCSVT): Reviewer"
 
-  - badge: TNNLS
-    description: "IEEE Transactions on Neural Networks and Learning Systems (TNNLS): Reviewer"
-
-  - badge: TMM
-    description: "IEEE Transactions on Multimedia (TMM): Reviewer"
+  - badge: TIT
+    description: "IEEE Transactions on Information Theory (TIT): Reviewer"
 
 conference:
   - badge: NeurIPS

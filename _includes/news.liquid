@@ -15,9 +15,19 @@
             <th scope="row" style="width:20%; white-space:nowrap; text-align:left; vertical-align:top; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum';">{{ item.date | date: '%b %d, %Y' }}</th>
             <td style="font-weight:400; vertical-align:top;">
               {% if item.inline %}
-                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                {% if item.link %}
+                  <a class="news-title" href="{{ item.link | relative_url }}" target="_blank">
+                    {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                  </a>
+                {% else %}
+                  {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                {% endif %}
               {% else %}
-                <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                {% if item.link %}
+                  <a class="news-title" href="{{ item.link | relative_url }}" target="_blank">{{ item.title }}</a>
+                {% else %}
+                  <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                {% endif %}
               {% endif %}
             </td>
           </tr>
