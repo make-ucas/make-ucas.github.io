@@ -1473,7 +1473,7 @@ body {
 /* tighter column widths so name/awards are closer */
 .students-table .col-badge { width: 70px; }
 .students-table .col-name  { width: 70px; font-weight: 500; }  /* lighter */
-.students-table .col-dest  { width: 200px; font-weight: 400; color: var(--global-text-color); }
+.students-table .col-dest  { width: 350px; font-weight: 400; color: var(--global-text-color); }
 .students-table .col-awards { font-weight: 400;color: var(--global-text-color); }
 
 /* pill-style badges (Ke's preferred blue) */

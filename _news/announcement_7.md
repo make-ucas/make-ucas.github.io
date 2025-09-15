@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper was honored with the **Best Paper** award at the 2025 China Conference on Multimedia(ChinaMM 2025). 
+Our paper was honored with the **Best Paper** Award at the 2025 China Conference on Multimedia (ChinaMM 2025). 

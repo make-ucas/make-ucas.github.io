@@ -15,9 +15,9 @@ layout: default
               <div class="award-text">
                 <div class="text-muted small">
                   {% if item.link %}
-                    <a href="{{ item.link }}" target="_blank" class="text-dark">{{ item.title }}</a>
+                    <a href="{{ item.link }}" target="_blank" class="award-link">{{ item.title }}</a>
                   {% else %}
-                    <span class="text-dark">{{ item.title }}</span>
+                    <span class="award-link">{{ item.title }}</span>
                   {% endif %}
                 </div>
               </div>
@@ -41,3 +41,4 @@ layout: default
   .awards-list .award-date { flex-basis: 120px; }
 }
 </style>
+
