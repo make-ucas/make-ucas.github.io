@@ -388,7 +388,7 @@ ninja.data = [{
           title: 'Our team (MR-CAS) won the 1st place in IJCAI 2025 Workshop &amp;amp;amp; Challenge...',
           description: "",
           section: "News",},{id: "news-our-paper-was-honored-with-the-best-paper-award-at-the-2025-china-conference-on-multimedia-chinamm-2025",
-          title: 'Our paper was honored with the Best Paper award at the 2025 China...',
+          title: 'Our paper was honored with the Best Paper Award at the 2025 China...',
           description: "",
           section: "News",},{id: "news-our-team-mr-cas-won-the-1st-place-in-iccv-2025-competition-for-real-world-raw-denoising-challenge",
           title: 'Our team (MR-CAS) won the 1st place in ICCV 2025 Competition for Real-World...',
